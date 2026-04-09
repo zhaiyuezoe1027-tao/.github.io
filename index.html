@@ -13,13 +13,17 @@
             scroll-behavior: smooth;
         }
 
-        /* 顶部导航 */
+        body {
+            background: #fff;
+        }
+
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 6%;
-            background: #ffffff;
+            padding: 16px 6%;
+            background: #fff;
             box-shadow: 0 1px 5px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
@@ -27,66 +31,163 @@
             z-index: 999;
         }
 
+        /* Logo */
         .logo {
-            font-size: 24px;
-            font-weight: 600;
-            color: #1a1a1a;
-            letter-spacing: 1px;
+            height: 50px;
+            width: auto;
+        }
+        .footer-logo {
+            height: 45px;
+            width: auto;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
 
-        /* 导航菜单 */
-        nav {
+        /* PC Nav */
+        .nav {
             display: flex;
             gap: 36px;
+            align-items: center;
         }
-
         .nav-item {
             position: relative;
+            list-style: none;
         }
-
-        nav a {
+        .nav a {
             text-decoration: none;
-            color: #333;
+            color: #222;
             font-size: 15px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
-
-        nav a:hover {
+        .nav a:hover {
             color: #000;
         }
 
-        /* 下拉菜单 */
+        /* Dropdown */
         .dropdown {
             display: none;
             position: absolute;
             top: 150%;
             left: 0;
-            background: white;
+            background: #fff;
             min-width: 180px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
             border-radius: 4px;
             overflow: hidden;
         }
-
         .dropdown a {
             display: block;
-            padding: 12px 18px;
+            padding: 11px 18px;
             font-size: 14px;
-            color: #555;
+            color: #444;
             text-transform: none;
         }
-
         .nav-item:hover .dropdown {
             display: block;
         }
 
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 260px;
+            height: 100vh;
+            background: #fff;
+            box-shadow: -3px 0 15px rgba(0,0,0,0.1);
+            z-index: 9999;
+            padding: 80px 25px;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        .close-btn {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            font-size: 26px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .mobile-nav-item {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+        .mobile-nav-item a {
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .mobile-dropdown {
+            padding-left: 20px;
+            margin-top: 8px;
+            display: none;
+        }
+        .mobile-dropdown a {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .mobile-nav-item:hover .mobile-dropdown {
+            display: block;
+        }
+
+        /* Search & Filter */
+        .search-bar {
+            padding: 100px 6% 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        .search-input {
+            width: 600px;
+            max-width: 90%;
+            padding: 12px 20px;
+            border: 1px solid #eee;
+            border-radius: 50px;
+            outline: none;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+        .filter {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #111;
+            color: #fff;
+            border-color: #111;
+        }
+
         /* Banner */
         .banner {
-            margin-top: 80px;
-            height: 650px;
-            background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25)), url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc");
+            margin-top: 82px;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc");
             background-size: cover;
             background-position: center;
             display: flex;
@@ -94,107 +195,138 @@
             padding: 0 6%;
             color: white;
         }
-
         .banner-text h1 {
-            font-size: 58px;
+            font-size: 52px;
             font-weight: 300;
             margin-bottom: 20px;
-            line-height: 1.2;
         }
-
         .banner-text p {
             font-size: 18px;
             max-width: 550px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             color: #eee;
         }
-
         .btn {
-            padding: 14px 36px;
-            background: #1a1a1a;
+            padding: 13px 32px;
+            background: #111;
             color: white;
-            border: none;
-            font-size: 15px;
-            cursor: pointer;
             text-decoration: none;
             display: inline-block;
             border-radius: 2px;
-            transition: 0.2s;
+            font-size: 15px;
         }
 
-        .btn:hover {
-            background: #000;
-        }
-
-        /* 通用区块 */
+        /* Section */
         .section {
-            padding: 100px 6%;
+            padding: 80px 6%;
             text-align: center;
         }
-
         .section h2 {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 300;
             margin-bottom: 12px;
             color: #111;
         }
-
         .section p {
             color: #666;
-            max-width: 650px;
-            margin: 0 auto 50px;
-            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
         }
 
-        /* 产品网格 */
+        /* 批量产品网格（终极版） */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 40px;
-        }
-
-        .item {
             text-align: left;
         }
-
-        .item img {
+        .product {
+            transition: 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        .product img {
             width: 100%;
-            height: 320px;
+            height: 300px;
             object-fit: cover;
             border-radius: 2px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
-
-        .item-name {
+        .product-name {
             font-size: 16px;
             color: #222;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        /* 底部 */
+        /* 独立分类背景 */
+        #lighting { background: #fff; }
+        #chairs { background: #f9f9f9; }
+        #tables { background: #fff; }
+        #interior { background: #f9f9f9; }
+        #exterior { background: #fff; }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 16px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            outline: none;
+            font-size: 15px;
+        }
+        .contact-form button {
+            padding: 13px 30px;
+            background: #111;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+        .contact-info {
+            margin-top: 40px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* Footer */
         footer {
-            background: #f5f5f5;
-            padding: 60px 6%;
+            background: #f7f7f7;
+            padding: 50px 6%;
             text-align: center;
             color: #666;
             font-size: 14px;
         }
 
-        /* 移动端适配 */
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .nav { display: none; }
+            .mobile-menu-btn { display: block; }
+            .logo { height: 40px; }
+        }
         @media (max-width:768px) {
-            .banner-text h1 { font-size: 38px; }
-            nav { gap: 18px; }
-            .section { padding: 70px 20px; }
+            .banner-text h1 { font-size: 36px; }
+            .section { padding: 60px 20px; }
+            .grid { gap: 25px; }
         }
     </style>
 </head>
+
 <body>
 
-<!-- 顶部导航 -->
+<!-- Header + LOGO -->
 <header>
-    <div class="logo">TM Design</div>
-    <nav>
-        <div class="nav-item">
+    <img src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/cfbab3e10cbb4aa9a7c0178b90786ff3.png" alt="TM Design Logo" class="logo">
+    <ul class="nav">
+        <li class="nav-item">
             <a href="#lighting">Lighting</a>
             <div class="dropdown">
                 <a href="#">Chandeliers</a>
@@ -203,8 +335,8 @@
                 <a href="#">Ceiling Lamps</a>
                 <a href="#">Wall Lamps</a>
             </div>
-        </div>
-        <div class="nav-item">
+        </li>
+        <li class="nav-item">
             <a href="#chairs">Chairs</a>
             <div class="dropdown">
                 <a href="#">Office Chairs</a>
@@ -212,50 +344,210 @@
                 <a href="#">Lounge Chairs</a>
                 <a href="#">Accent Chairs</a>
             </div>
-        </div>
-        <a href="#tables">Tables</a>
-        <a href="#interior">Interior Design</a>
-        <a href="#exterior">Exterior Design</a>
-    </nav>
+        </li>
+        <li class="nav-item"><a href="#tables">Tables</a></li>
+        <li class="nav-item"><a href="#interior">Interior</a></li>
+        <li class="nav-item"><a href="#exterior">Exterior</a></li>
+        <li class="nav-item"><a href="#about">About</a></li>
+        <li class="nav-item"><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-menu-btn" id="menuBtn">☰</button>
 </header>
+
+<!-- 移动端菜单 -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" id="closeBtn">×</button>
+    <ul>
+        <li class="mobile-nav-item">
+            <a href="#lighting">Lighting</a>
+            <div class="mobile-dropdown">
+                <a href="#">Chandeliers</a><a href="#">Table Lamps</a><a href="#">Floor Lamps</a>
+            </div>
+        </li>
+        <li class="mobile-nav-item">
+            <a href="#chairs">Chairs</a>
+            <div class="mobile-dropdown">
+                <a href="#">Office Chairs</a><a href="#">Dining Chairs</a><a href="#">Lounge Chairs</a>
+            </div>
+        </li>
+        <li class="mobile-nav-item"><a href="#tables">Tables</a></li>
+        <li class="mobile-nav-item"><a href="#interior">Interior</a></li>
+        <li class="mobile-nav-item"><a href="#exterior">Exterior</a></li>
+        <li class="mobile-nav-item"><a href="#about">About</a></li>
+        <li class="mobile-nav-item"><a href="#contact">Contact</a></li>
+    </ul>
+</div>
 
 <!-- Banner -->
 <section class="banner">
     <div class="banner-text">
-        <h1>Modern Living, Designed for You</h1>
-        <p>TM Design creates premium lighting, furniture and unique space solutions with minimalist aesthetics and timeless style.</p>
-        <a href="#products" class="btn">Explore Collection</a>
+        <h1>Timeless Design for Modern Life</h1>
+        <p>TM Design provides premium lighting, furniture, and professional space solutions with minimalist aesthetics.</p>
+        <a href="#lighting" class="btn">Explore Collection</a>
     </div>
 </section>
 
-<!-- 产品展示 -->
-<section class="section" id="products">
-    <h2>Our Featured Products</h2>
-    <p>Minimalist design, high-quality materials, and perfect details for every space.</p>
+<!-- Search & Filter -->
+<div class="search-bar">
+    <input type="text" class="search-input" placeholder="Search products...">
+    <div class="filter">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Lighting</button>
+        <button class="filter-btn">Chairs</button>
+        <button class="filter-btn">Tables</button>
+        <button class="filter-btn">Interior</button>
+    </div>
+</div>
+
+<!-- ====================== 1. LIGHTING 灯具 独立区域 ====================== -->
+<section class="section" id="lighting">
+    <h2>Lighting Collection</h2>
+    <p>Minimalist, warm, and functional lighting for every room.</p>
     <div class="grid">
-        <div class="item">
-            <img src="https://images.unsplash.com/photo-1507089018424-f9c06430e679">
-            <div class="item-name">Minimal Pendant Lamp</div>
+        <!-- 批量产品模板：复制下面这一块即可无限加产品 -->
+        <div class="product">
+            <img src="images/lighting-1.jpg">
+            <div class="product-name">Pendant Lamp</div>
         </div>
-        <div class="item">
-            <img src="https://images.unsplash.com/photo-1567016772373-1098536c66ab">
-            <div class="item-name">Modern Dining Chair</div>
+        <div class="product">
+            <img src="images/lighting-2.jpg">
+            <div class="product-name">Floor Lamp</div>
         </div>
-        <div class="item">
-            <img src="https://images.unsplash.com/photo-1533090368676-1fd25485db88">
-            <div class="item-name">Simple Coffee Table</div>
+        <div class="product">
+            <img src="images/lighting-3.jpg">
+            <div class="product-name">Table Lamp</div>
         </div>
-        <div class="item">
-            <img src="https://images.unsplash.com/photo-1513502714765-494f37e45f15">
-            <div class="item-name">Nordic Floor Lamp</div>
+        <div class="product">
+            <img src="images/lighting-4.jpg">
+            <div class="product-name">Ceiling Lamp</div>
         </div>
     </div>
 </section>
 
-<!-- 底部 -->
+<!-- ====================== 2. CHAIRS 椅子 独立区域 ====================== -->
+<section class="section" id="chairs">
+    <h2>Chairs Collection</h2>
+    <p>Comfort and design for office, dining, and living spaces.</p>
+    <div class="grid">
+        <div class="product">
+            <img src="images/chair-1.jpg">
+            <div class="product-name">Dining Chair</div>
+        </div>
+        <div class="product">
+            <img src="images/chair-2.jpg">
+            <div class="product-name">Office Chair</div>
+        </div>
+        <div class="product">
+            <img src="images/chair-3.jpg">
+            <div class="product-name">Lounge Chair</div>
+        </div>
+        <div class="product">
+            <img src="images/chair-4.jpg">
+            <div class="product-name">Accent Chair</div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================== 3. TABLES 桌子 独立区域 ====================== -->
+<section class="section" id="tables">
+    <h2>Tables Collection</h2>
+    <p>Simple, elegant, and practical table designs.</p>
+    <div class="grid">
+        <div class="product">
+            <img src="images/table-1.jpg">
+            <div class="product-name">Coffee Table</div>
+        </div>
+        <div class="product">
+            <img src="images/table-2.jpg">
+            <div class="product-name">Dining Table</div>
+        </div>
+        <div class="product">
+            <img src="images/table-3.jpg">
+            <div class="product-name">Side Table</div>
+        </div>
+        <div class="product">
+            <img src="images/table-4.jpg">
+            <div class="product-name">Office Table</div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================== 4. INTERIOR 室内设计 ====================== -->
+<section class="section" id="interior">
+    <h2>Interior Design</h2>
+    <p>Whole-house interior solutions with modern minimalist style.</p>
+    <div class="grid">
+        <div class="product"><img src="images/interior-1.jpg"><div class="product-name">Living Room</div></div>
+        <div class="product"><img src="images/interior-2.jpg"><div class="product-name">Bedroom</div></div>
+        <div class="product"><img src="images/interior-3.jpg"><div class="product-name">Kitchen</div></div>
+        <div class="product"><img src="images/interior-4.jpg"><div class="product-name">Study</div></div>
+    </div>
+</section>
+
+<!-- ====================== 5. EXTERIOR 室外设计 ====================== -->
+<section class="section" id="exterior">
+    <h2>Exterior Design</h2>
+    <p>Outdoor space, garden, and terrace design services.</p>
+    <div class="grid">
+        <div class="product"><img src="images/exterior-1.jpg"><div class="product-name">Garden Design</div></div>
+        <div class="product"><img src="images/exterior-2.jpg"><div class="product-name">Terrace Design</div></div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about" style="background:#f9f9f9;">
+    <h2>About TM Design</h2>
+    <p>TM Design is a professional design brand focusing on modern minimalist lighting, furniture, and space solutions. We insist on using high-quality materials and simple aesthetics to create comfortable and stylish spaces for global customers.</p>
+</section>
+
+<!-- Contact -->
+<section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>We will reply to you within 24 hours.</p>
+    <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <input type="text" placeholder="Your Phone">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+    </div>
+    <div class="contact-info">
+        <p><strong>Address:</strong> Oriental Business District, Jianshe Avenue, Chang'an District, Shijiazhuang City, Hebei Province</p>
+        <p><strong>Contact:</strong> Mr. Huang</p>
+        <p><strong>Phone / Whatsapp:</strong> +86 15531126502</p>
+    </div>
+</section>
+
+<!-- Footer + LOGO -->
 <footer>
+    <img src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/cfbab3e10cbb4aa9a7c0178b90786ff3.png" alt="TM Design Logo" class="footer-logo">
     <p>© 2025 TM Design. All rights reserved.</p>
 </footer>
+
+<script>
+    // 移动端菜单
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('closeBtn');
+    menuBtn.onclick = () => mobileMenu.classList.add('active');
+    closeBtn.onclick = () => mobileMenu.classList.remove('active');
+
+    // 筛选功能
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const products = document.querySelectorAll('.product');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const text = btn.textContent.toUpperCase();
+            products.forEach(p => {
+                const cat = p.closest('section').id.toUpperCase();
+                if (text == 'ALL' || cat == text) p.style.display = 'block';
+                else p.style.display = 'none';
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
