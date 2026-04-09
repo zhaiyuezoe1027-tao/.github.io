@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光影居 | 灯具与家居设计品牌</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* 顶部导航 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 5%;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        nav a {
+            margin: 0 18px;
+            text-decoration: none;
+            color: #444;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #b99470;
+        }
+
+        /* 轮播 banner */
+        .banner {
+            margin-top: 80px;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url("https://img.freepik.com/free-photo/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background_41470-4722.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            color: white;
+        }
+
+        .banner-text h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .banner-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 550px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: #b99470;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #a6825f;
+        }
+
+        /* 通用区块 */
+        .section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .section p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        /* 产品展示 */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .product-name {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .product-price {
+            color: #b99470;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        /* 设计案例 */
+        .case-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .case-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* 联系表单 */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        /* 底部 */
+        footer {
+            background: #222;
+            color: #aaa;
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            margin: 0 12px;
+            text-decoration: none;
+        }
+
+        /* 移动端适配 */
+        @media (max-width:768px) {
+            .banner-text h1 {
+                font-size: 36px;
+            }
+            .case-list {
+                grid-template-columns: 1fr;
+            }
+            header {
+                padding: 15px 3%;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header>
+    <div class="logo">光影居</div>
+    <nav>
+        <a href="#home">首页</a>
+        <a href="#products">灯具产品</a>
+        <a href="#cases">设计案例</a>
+        <a href="#about">关于我们</a>
+        <a href="#contact">联系我们</a>
+    </nav>
+</header>
+
+<!-- 首页轮播 -->
+<section class="banner" id="home">
+    <div class="banner-text">
+        <h1>用光设计家的温度</h1>
+        <p>专注高端灯具与整体家居空间设计，为你打造舒适、高级、有质感的理想居所。</p>
+        <a href="#products" class="btn">查看产品</a>
+    </div>
+</section>
+
+<!-- 灯具产品 -->
+<section class="section" id="products">
+    <h2>灯具产品</h2>
+    <p>原创设计 | 高品质材质 | 柔和光影 | 全屋搭配</p>
+    <div class="product-list">
+        <div class="product">
+            <img src="https://img.freepik.com/free-photo/modern-lamp-isolated-white-background_1205-1509.jpg" alt="吊灯">
+            <div class="product-info">
+                <div class="product-name">北欧简约吊灯</div>
+                <div class="product-price">¥ 499</div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://img.freepik.com/free-photo/table-lamp-isolated-white-background_1205-1502.jpg" alt="台灯">
+            <div class="product-info">
+                <div class="product-name">轻奢床头台灯</div>
+                <div class="product-price">¥ 299</div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://img.freepik.com/free-photo/modern-pendant-lamp-isolated-white_1205-1506.jpg" alt="吸顶灯">
+            <div class="product-info">
+                <div class="product-name">极简客厅吸顶灯</div>
+                <div class="product-price">¥ 699</div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://img.freepik.com/free-photo/floor-lamp-isolated-white-background_1205-1500.jpg" alt="落地灯">
+            <div class="product-info">
+                <div class="product-name">艺术落地氛围灯</div>
+                <div class="product-price">¥ 599</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 家居设计案例 -->
+<section class="section" id="cases" style="background:#f8f8f8;">
+    <h2>家居设计案例</h2>
+    <p>整体空间设计 + 灯具定制搭配，真实案例展示</p>
+    <div class="case-list">
+        <div class="case-item">
+            <img src="https://img.freepik.com/free-photo/modern-living-room-interior-with-sofa-green-plants-lamp-table-dark-wall-background_41470-4722.jpg" alt="客厅设计">
+        </div>
+        <div class="case-item">
+            <img src="https://img.freepik.com/free-photo/modern-bedroom-interior-with-bed-bedside-table-lamp_41470-4720.jpg" alt="卧室设计">
+        </div>
+    </div>
+</section>
+
+<!-- 关于我们 -->
+<section class="section" id="about">
+    <h2>关于光影居</h2>
+    <p>我们是一家专注于灯具研发与家居空间设计的品牌，坚持用光提升生活品质，为每一位客户打造专属的理想家居环境。</p>
+    <a href="#contact" class="btn">预约设计</a>
+</section>
+
+<!-- 联系我们 -->
+<section class="section" id="contact" style="background:#f8f8f8;">
+    <h2>联系我们</h2>
+    <p>欢迎咨询产品、报价、设计方案，我们将尽快回复</p>
+    <div class="contact-form">
+        <input type="text" placeholder="您的姓名">
+        <input type="text" placeholder="联系电话">
+        <textarea rows="5" placeholder="留言内容"></textarea>
+        <button class="btn">提交信息</button>
+    </div>
+</section>
+
+<!-- 底部 -->
+<footer>
+    <div class="footer-links">
+        <a href="#">首页</a>
+        <a href="#">产品</a>
+        <a href="#">设计</a>
+        <a href="#">关于</a>
+        <a href="#">联系</a>
+    </div>
+    <br>
+    <p>© 2025 光影居 灯具与家居设计 版权所有</p>
+</footer>
+
+</body>
+</html>
